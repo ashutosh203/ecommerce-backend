@@ -47,7 +47,7 @@ const {
 } = require("../controllers/SellerControllers/sellerDashboardDetails.controller");
 const {
   sellerProfile,
-} = require("../controllers/SellerControllers/SellerProfile.controller");
+} = require("../controllers/SellerControllers/sellerProfile.controller");
 
 // create router
 const sellerRoutes = express.Router();
