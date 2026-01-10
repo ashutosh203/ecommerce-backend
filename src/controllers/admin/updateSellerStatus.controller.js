@@ -2,7 +2,7 @@ const Seller = require("../../model/Seller.model");
 const { ApiError } = require("../../utils/errorHandler");
 
 exports.updateSellerStatus = async (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   const { sellerId } = req.params;
   const { status, isApproved } = req.body;
 
