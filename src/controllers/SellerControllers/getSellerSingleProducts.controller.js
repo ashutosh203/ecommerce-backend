@@ -5,7 +5,6 @@ exports.getSellerSingleProducts = async (req, res) => {
   const productId = req.params.id;
   const sellerId = req.seller.id;
   const product = await Product.findById(productId);
-  // console.log(product)
   if (!product) {
     throw new ApiError(404, "Product not found");
   }

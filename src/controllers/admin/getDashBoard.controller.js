@@ -14,16 +14,6 @@ exports.getDashBoard = async (req, res) => {
   const pendingSellerProfile = await Seller.find({
     isApproved: false,
   }).select("isApproved ownerName email status createdAt");
-  // console.log(
-  //   "totalSeller : ",
-  //   totalSeller,
-  //   "pendingApprovals : ",
-  //   pendingApprovals,
-  //   "totalProducts : ",
-  //   totalProducts,
-  //   "pendingSellerProfile : ",
-  //   pendingSellerProfile
-  // );
   res.status(200).json({
     success: true,
     totalSeller,

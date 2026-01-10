@@ -2,7 +2,6 @@ const UserFavorites = require("../../model/userFavorites.model");
 
 exports.favoriteAllList = async (req, res) => {
   const userId = req.User.id;
-  // console.log(productId);
   const allFavoritesList = await UserFavorites.find({ userId }).populate(
     "productId"
   );

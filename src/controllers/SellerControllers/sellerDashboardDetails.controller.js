@@ -21,8 +21,6 @@ exports.sellerDashboardDetails = async (req, res) => {
   });
 
   const SellerData = await Seller.findById(Id).select("status isApproved");
-  console.log(SellerData);
-  
 
   res.status(200).json({
     success: true,

@@ -3,14 +3,10 @@ const { ApiError } = require("../../utils/errorHandler");
 
 exports.SellerProductUpdate = async (req, res) => {
   const productId = req.params.id;
-  // console.log("this is update id:", productId);
-  // const updateData = req.body;
-  // console.log("this is update data:", updateData);
   const id = req.seller.id;
 
   // 1. Product find karo
   const product = await Product.findById(productId);
-  // console.log("this is a find by id product:", product);
   if (!product) {
     throw new ApiError(404, "Product not found");
   }

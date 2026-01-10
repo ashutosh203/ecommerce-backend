@@ -71,6 +71,7 @@ sellerRoutes.post(
   verifySellerProduct,
   addProductController
 ); //add product  {done}
+
 sellerRoutes.get(
   "/products",
   verifySellerToken,

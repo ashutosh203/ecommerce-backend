@@ -10,7 +10,6 @@ exports.adminAuthMiddleware = async (req, res, next) => {
     password,
     process.env.ADMIN_PASSWORD_HASH
   );
-  // console.log(isMatch)
   if (!isMatch) {
     throw new ApiError(401, "Invalid admin Password");
   }

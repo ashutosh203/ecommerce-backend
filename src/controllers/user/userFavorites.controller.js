@@ -4,7 +4,6 @@ const UserFavorites = require("../../model/userFavorites.model");
 exports.toggleFavorite = async (req, res) => {
   const userId = req.User.id;
   const { productId } = req.body;
-  console.log(productId)
 
   // 🔍 Check already exists
   const existing = await UserFavorites.findOne({ userId, productId });

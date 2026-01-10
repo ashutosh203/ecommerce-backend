@@ -3,7 +3,6 @@ const { ApiError } = require("../../utils/errorHandler");
 exports.verifyUserToken = async (req, res, next) => {
   // 1 Header se Authorization uthao
   const authHeader = await req.headers.authorization;
-  // console.log(authHeader);
 
   // 2 Agar header hi nahi aaya
   if (!authHeader) {
@@ -16,9 +15,7 @@ exports.verifyUserToken = async (req, res, next) => {
   }
   // 4 Token verify karo // JWT_SECRET se
   const decoded = await jwt.verify(token, process.env.JWT_SECRET);
-  console.log("the ", decoded);
   req.User = decoded;
-  // console.log("next se pahale","Verifying seller token middleware");
   next();
   // res.send('HELLO')
 };

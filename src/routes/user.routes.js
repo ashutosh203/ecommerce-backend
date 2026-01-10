@@ -19,7 +19,10 @@ const {
 const {
   removeFromCart,
 } = require("../controllers/user/removeFromCart.controller");
-const { updateCartQuantity } = require("../controllers/user/updateCartQuantity.controller");
+const {
+  updateCartQuantity,
+} = require("../controllers/user/updateCartQuantity.controller");
+const { createOrder } = require("../controllers/user/createOrder.controller");
 const userRoute = express();
 
 // /api/user/
@@ -68,5 +71,7 @@ userRoute.patch(
   authorizeRoles("USER"),
   updateCartQuantity
 ); //get all  add to cart
+// /api/user/order
+userRoute.post("/order", verifyUserToken, authorizeRoles("USER"), createOrder); //get all  add to cart
 
 module.exports = userRoute;

@@ -48,6 +48,11 @@ module.exports.updateCartQuantity = async (req, res) => {
     totalAmount += item.quantity * item.priceAtThatTime;
   });
 
+  await cart.populate({
+    path: "items.productId",
+    select: "productName price images stock",
+  });
+
   return res.status(200).json({
     success: true,
     message: "Cart updated",
