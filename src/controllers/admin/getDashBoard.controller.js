@@ -1,6 +1,6 @@
 const Product = require("../../model/product.model");
 const Seller = require("../../model/Seller.model");
-const UserFavorites = require("../../model/userFavorites.model");
+const User = require("../../model/user.model");
 
 exports.getDashBoard = async (req, res) => {
   const totalSeller = await Seller.countDocuments();
@@ -9,7 +9,7 @@ exports.getDashBoard = async (req, res) => {
   }); // total pending approvals seller count
 
   const totalProducts = await Product.countDocuments();
-  const totalUser = await UserFavorites.countDocuments();
+  const totalUser = await User.countDocuments();
 
   const pendingSellerProfile = await Seller.find({
     isApproved: false,
